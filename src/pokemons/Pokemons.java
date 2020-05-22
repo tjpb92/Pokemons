@@ -10,6 +10,13 @@ public class Pokemons {
         Pokemon bulbizarre = new Pokemon(1, "Bulbizarre");
         System.out.println(bulbizarre);
 
+        System.out.println(Pokemon.count() + " pokémon(s) créé(s)");
+
+        Dresseur sacha = new Dresseur(1, "Sacha");
+        System.out.println(sacha);
+
+        PokeBall pb1 = new PokeBall();
+
         miaouss.attaquer(bulbizarre);
         System.out.println("après attaque de Miaouss : " + bulbizarre);
 
@@ -37,5 +44,13 @@ public class Pokemons {
                 }
             }
         }
+        if (!miaouss.isKO()) {
+            pb1.capture(miaouss);
+        } else {
+            pb1.capture(bulbizarre);
+        }
+        pb1.capture(miaouss);
+        pb1.libere();
+        pb1.libere();
     }
 }
